@@ -32,3 +32,14 @@ jobs:
             --source-ranges=0.0.0.0/0 \
             --rules=tcp:5000 \
             --target-tags=myvm-tag
+
+      - name: Configure kubectl
+        run: |
+          gcloud container clusters get-credentials my-cluster --region europe-west1-b
+          kubectl config use-context my-cluster
+
+      - name: Deploy to GKE
+        run: |
+          kubectl apply -f deployment.yaml
+
+      
