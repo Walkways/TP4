@@ -51,9 +51,7 @@ jobs:
           gcloud container clusters get-credentials my-cluster --region europe-west1-b
           kubectl config set-context my-context --cluster=my-cluster
           kubectl config use-context my-context
-
-      - name: Deploy to GKE
-        run: |
           kubectl apply -f deployment.yaml
+
 
       
