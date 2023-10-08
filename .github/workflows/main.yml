@@ -33,6 +33,14 @@ jobs:
             --rules=tcp:5000 \
             --target-tags=myvm-tag
 
+      - name: Create GKE Cluster
+        run: |
+          gcloud container clusters create my-cluster \
+            --num-nodes=2 \
+            --machine-type=n1-standard-2 \
+            --zone=europe-west1-b
+            
+
       - name: Configure kubectl
         run: |
           gcloud container clusters get-credentials my-cluster --region europe-west1-b
