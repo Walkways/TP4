@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-deployment
+spec:
+  replicas: 3 # Le nombre de répliques que vous souhaitez
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      containers:
+        - name: my-app-container
+          image: mansoursou/imagetp3:latest # Image Docker que vous souhaitez déployer
+          ports:
+            - containerPort: 5000 # Port sur lequel l'application expose des services
