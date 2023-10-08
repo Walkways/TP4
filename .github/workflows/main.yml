@@ -48,9 +48,10 @@ jobs:
 
       - name: Configure kubectl
         run: |
-          gcloud container clusters get-credentials my-cluster --region europe-west1-b
+          gcloud container clusters get-credentials my-cluster
           kubectl config set-context my-context --cluster=my-cluster
           kubectl config use-context my-context
+          gcloud config set project zinc-strategy-393412
           kubectl apply -f deployment.yaml
 
 
