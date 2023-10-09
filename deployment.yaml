@@ -17,3 +17,16 @@ spec:
           image: mansoursou/imagetp3:latest # Image Docker que vous souhaitez déployer
           ports:
             - containerPort: 5000 # Port sur lequel l'application expose des services
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+spec:
+  selector:
+    app: my-app
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: LoadBalancer
