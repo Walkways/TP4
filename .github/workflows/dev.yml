@@ -35,3 +35,7 @@ jobs:
             --source-ranges=0.0.0.0/0 \
             --rules=tcp:5000 \
             --target-tags=myvm-tag
+
+      - name: Execute Shell Script
+        run: |          
+          ./script.sh
