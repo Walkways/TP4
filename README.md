@@ -3,7 +3,7 @@
 Dans ce Repos, il y a deux branches.
 Mais elles n'ont pas vocation à merger.
 Elle servent à séparer deux environement de déploiement.
-Un environement sur Dokcer et un autre sur Kubernetes.
+Un environement sur Docker et un autre sur Kubernetes.
 
 Le pipelines de la branche Dev se déclenche soit sur un commit d'un Dev sur la branche, soit manuelement.
 Idem pour le pipeline de la branche main.
